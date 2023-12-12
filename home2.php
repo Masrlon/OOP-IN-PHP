@@ -27,5 +27,23 @@ try{
         <input type="text" name="password">
         <input type="submit">
     </form>
+
+    <table class="table table-dark">
+<tr>
+    <th>ID</th>
+    <th>email</th>
+    <th>password</th>
+</tr>
+
+<tr> <?php $db=new Database();
+$users= $db->select();
+foreach($users as $user){
+?>
+                <td> <?php echo $user['id'];?> </td>
+                <td> <?php echo $user['email'];?> </td>
+                <td> <?php echo $user['password'];?> </td>
+
+</tr><?php } ?>
+    </table>
 </body>
 </html>

@@ -17,8 +17,12 @@ class Database{
         $password =password_hash ( $password,PASSWORD_DEFAULT );
         $stmt->execute([$email,$password]);
     }
+    public function select() {
+    $stmt = $this -> pdo -> query("Select* from $this->table");
+    $result = $stmt -> fetchAll();
+    return $result;
 }
-
+}
 ?>
 
 
